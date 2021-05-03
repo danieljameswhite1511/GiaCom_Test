@@ -26,5 +26,38 @@ namespace Order.Service
             var order = await _orderRepository.GetOrderByIdAsync(orderId);
             return order;
         }
+
+        public async Task<IEnumerable<OrderSummary>> GetOrdersByStatusAsync(string statusName)
+        {
+            var orders = await _orderRepository.GetOrdersByStatusAsync(statusName);
+            return orders;
+        }
+
+        public async Task<List<OrderDetail>> GetOrderDetailsAsync()
+        {
+            var orderDetails = await _orderRepository.GetOrderDetailsAsync();
+            return orderDetails;
+        }
+
+        public async Task<OrderDetail> UpdateOrderDetailAsync(OrderDetail orderDetail)
+        {
+            var orderDetailToUpdate = await _orderRepository.UpdateOrderDetailAsync(orderDetail);
+
+            return orderDetailToUpdate;
+        }
+
+        public async Task<OrderDetail> CreateOrderDetailAsync(OrderDetail orderDetail)
+        {
+        var orderDetailToCreate = await _orderRepository.CreateOrderDetailAsync(orderDetail);
+
+        return orderDetailToCreate;
+        }
+
+    public async Task<List<OrderMonthlyProfitSummary>> MonthlyProfits()
+    {
+      var ordersMonthlyProfitSummary = await _orderRepository.MonthlyProfits();
+
+      return ordersMonthlyProfitSummary;
     }
+  }
 }

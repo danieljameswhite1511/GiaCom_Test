@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "9194d0c6-3d4c-46dc-a8e8-30657e489d83",
+		"name": "Giacom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}orders/details",
+					"host": [
+						"{{url}}orders"
+					],
+					"path": [
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}orders/details",
+					"host": [
+						"{{url}}orders"
+					],
+					"path": [
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders by status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}orders/status/failed",
+					"host": [
+						"{{url}}orders"
+					],
+					"path": [
+						"status",
+						"failed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"51b55677-c9a6-b53b-1508-173d5d79d9a6\",\r\n    \"statusId\": \"dd62f972-4f25-4782-e537-53703d807492\",\r\n    \"statusName\": \"Failed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}orders",
+					"host": [
+						"{{url}}orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"resellerId\": \"44c7bca9-4ae7-8f44-05cb-917f75296ebe\",\r\n        \"customerId\": \"e64b3ffb-e8a0-fb85-498a-0695336a5ae8\",\r\n        \"statusId\": \"e98b1c9b-d6fe-d5c3-eff5-abfebe31eb52\"\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}orders",
+					"host": [
+						"{{url}}orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders Monthly Profit Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000/"
+		}
+	]
+}
